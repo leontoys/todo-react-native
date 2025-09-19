@@ -7,3 +7,4 @@ export default defineSchema({ //wraps entire db structure
         isCompleted : v.boolean()
     })
 })
+
