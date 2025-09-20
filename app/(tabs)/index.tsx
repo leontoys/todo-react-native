@@ -1,8 +1,9 @@
 import { createHomeStyles } from '@/assets/settingsStyles';
+import Header from '@/components/Header';
 import useTheme from '@/hooks/useTheme';
 import { useMutation, useQuery } from "convex/react";
 import { LinearGradient } from "expo-linear-gradient";
-import { StatusBar, Text } from 'react-native';
+import { StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { api } from "../../convex/_generated/api";
 
@@ -17,7 +18,7 @@ export default function HomeScreen() {
     <LinearGradient colors={colors.gradients.background} style={styles.container}>
       <StatusBar barStyle={colors.statusBarStyle}/>
       <SafeAreaView style={styles.safeArea}>
-      <Text>Home</Text>
+        <Header/>
       </SafeAreaView>
       </LinearGradient>
       );
