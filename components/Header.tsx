@@ -9,23 +9,20 @@ import { View } from 'react-native'
 const Header = () => {
 
   const { colors } = useTheme()
-  const styles = createHomeStyles(colors)
+  const homeStyles = createHomeStyles(colors)
 
   const todos = useQuery(api.todos.getTodos)
 
   const completedCount = todos?.filter((todo) => todo.isCompleted).length || 0
   const totalCount = todos?.length || 0
-  const percentage = totalCount > 0 ? (completedCount/totalCount) * 100 : 0
-  
- // if (isLoading) {
- //   return <ActivityIndicator size={'large'} color={colors.primary}></ActivityIndicator>
- // }
+  const progressPercentage = totalCount > 0 ? (completedCount/totalCount) * 100 : 0
 
   return (
-    <View style={styles.header}>
-      <View style={styles.titleContainer}>
-        <LinearGradient colors={[colors.primary, colors.primary]}
-          style={styles.container} />
+    <View style={homeStyles.header}>
+      <View style={homeStyles.titleContainer}>
+        <LinearGradient colors={colors.gradients.primary} style={homeStyles.iconContainer}>
+
+        </LinearGradient>
       </View>
     </View>
   )
